@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SharpAPI\ContentDetectAi;
+namespace SharpAPI\DetectAiContent;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
@@ -11,7 +11,7 @@ use SharpAPI\Core\Client\SharpApiClient;
 /**
  * @api
  */
-class ContentDetectAiService extends SharpApiClient
+class DetectAiContentService extends SharpApiClient
 {
     /**
      * Initializes a new instance of the class.
@@ -20,24 +20,24 @@ class ContentDetectAiService extends SharpApiClient
      */
     public function __construct()
     {
-        parent::__construct(config('sharpapi-content-detect-ai.api_key'));
+        parent::__construct(config('sharpapi-detect-ai-content.api_key'));
         $this->setApiBaseUrl(
             config(
-                'sharpapi-content-detect-ai.base_url',
+                'sharpapi-detect-ai-content.base_url',
                 'https://sharpapi.com/api/v1'
             )
         );
         $this->setApiJobStatusPollingInterval(
             (int) config(
-                'sharpapi-content-detect-ai.api_job_status_polling_interval',
+                'sharpapi-detect-ai-content.api_job_status_polling_interval',
                 5)
         );
         $this->setApiJobStatusPollingWait(
             (int) config(
-                'sharpapi-content-detect-ai.api_job_status_polling_wait',
+                'sharpapi-detect-ai-content.api_job_status_polling_wait',
                 180)
         );
-        $this->setUserAgent('SharpAPILaravelContentDetectAi/1.0.0');
+        $this->setUserAgent('SharpAPILaravelDetectAiContent/1.0.0');
     }
 
     /**

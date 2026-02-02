@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace SharpAPI\ContentDetectAi;
+namespace SharpAPI\DetectAiContent;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
  * @api
  */
-class ContentDetectAiProvider extends ServiceProvider
+class DetectAiContentProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -18,8 +18,8 @@ class ContentDetectAiProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/sharpapi-content-detect-ai.php' => config_path('sharpapi-content-detect-ai.php'),
-            ], 'sharpapi-content-detect-ai');
+                __DIR__.'/../config/sharpapi-detect-ai-content.php' => config_path('sharpapi-detect-ai-content.php'),
+            ], 'sharpapi-detect-ai-content');
         }
     }
 
@@ -30,7 +30,7 @@ class ContentDetectAiProvider extends ServiceProvider
     {
         // Merge the package configuration with the app configuration.
         $this->mergeConfigFrom(
-            __DIR__.'/../config/sharpapi-content-detect-ai.php', 'sharpapi-content-detect-ai'
+            __DIR__.'/../config/sharpapi-detect-ai-content.php', 'sharpapi-detect-ai-content'
         );
     }
 }

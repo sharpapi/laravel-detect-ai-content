@@ -1,5 +1,5 @@
 {
-    "name": "sharpapi/laravel-content-detect-ai",
+    "name": "sharpapi/laravel-detect-ai-content",
     "description": "AI-Generated Content Detection for Laravel powered by SharpAPI.com",
     "keywords": [
         "sharpapi",
@@ -21,7 +21,7 @@
         "llm detection",
         "chatgpt detection"
     ],
-    "homepage": "https://github.com/sharpapi/laravel-content-detect-ai",
+    "homepage": "https://github.com/sharpapi/laravel-detect-ai-content",
     "license": "MIT",
     "authors": [
         {
@@ -41,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SharpAPI\\ContentDetectAi\\": "src/"
+            "SharpAPI\\DetectAiContent\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SharpAPI\\ContentDetectAi\\Tests\\": "tests/"
+            "SharpAPI\\DetectAiContent\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -71,7 +71,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SharpAPI\\ContentDetectAi\\ContentDetectAiProvider"
+                "SharpAPI\\DetectAiContent\\DetectAiContentProvider"
             ]
         }
     },

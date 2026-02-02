@@ -4,8 +4,8 @@
 
 ## Leverage AI API to detect AI-generated text content.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sharpapi/laravel-content-detect-ai.svg?style=flat-square)](https://packagist.org/packages/sharpapi/laravel-content-detect-ai)
-[![Total Downloads](https://img.shields.io/packagist/dt/sharpapi/laravel-content-detect-ai.svg?style=flat-square)](https://packagist.org/packages/sharpapi/laravel-content-detect-ai)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sharpapi/laravel-detect-ai-content.svg?style=flat-square)](https://packagist.org/packages/sharpapi/laravel-detect-ai-content)
+[![Total Downloads](https://img.shields.io/packagist/dt/sharpapi/laravel-detect-ai-content.svg?style=flat-square)](https://packagist.org/packages/sharpapi/laravel-detect-ai-content)
 
 Check the details at SharpAPI's [AI Content Detector API](https://sharpapi.com/en/catalog/ai/content-marketing-automation/ai-content-detector) page.
 
@@ -25,7 +25,7 @@ Follow these steps to install and set up the SharpAPI Laravel AI Content Detecti
 1. Install the package via `composer`:
 
 ```bash
-composer require sharpapi/laravel-content-detect-ai
+composer require sharpapi/laravel-detect-ai-content
 ```
 
 2. Register at [SharpAPI.com](https://sharpapi.com/) to obtain your API key.
@@ -39,7 +39,7 @@ SHARP_API_KEY=your_api_key_here
 4. **[OPTIONAL]** Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --tag=sharpapi-content-detect-ai
+php artisan vendor:publish --tag=sharpapi-detect-ai-content
 ```
 
 ---
@@ -58,7 +58,7 @@ php artisan vendor:publish --tag=sharpapi-content-detect-ai
 
 ## Usage
 
-You can inject the `ContentDetectAiService` class to access AI content detection functionality. For best results, especially with batch processing, use Laravel's queuing system to optimize job dispatch and result polling.
+You can inject the `DetectAiContentService` class to access AI content detection functionality. For best results, especially with batch processing, use Laravel's queuing system to optimize job dispatch and result polling.
 
 ### Basic Workflow
 
@@ -72,7 +72,7 @@ You can inject the `ContentDetectAiService` class to access AI content detection
 
 ### Controller Example
 
-Here is an example of how to use `ContentDetectAiService` within a Laravel controller:
+Here is an example of how to use `DetectAiContentService` within a Laravel controller:
 
 ```php
 <?php
@@ -80,13 +80,13 @@ Here is an example of how to use `ContentDetectAiService` within a Laravel contr
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Exception\GuzzleException;
-use SharpAPI\ContentDetectAi\ContentDetectAiService;
+use SharpAPI\ContentDetectAi\DetectAiContentService;
 
 class ContentController extends Controller
 {
-    protected ContentDetectAiService $aiDetectionService;
+    protected DetectAiContentService $aiDetectionService;
 
-    public function __construct(ContentDetectAiService $aiDetectionService)
+    public function __construct(DetectAiContentService $aiDetectionService)
     {
         $this->aiDetectionService = $aiDetectionService;
     }
@@ -173,7 +173,7 @@ SHARP_API_BASE_URL=https://sharpapi.com/api/v1
 
 For issues or suggestions, please:
 
-- [Open an issue on GitHub](https://github.com/sharpapi/laravel-content-detect-ai/issues)
+- [Open an issue on GitHub](https://github.com/sharpapi/laravel-detect-ai-content/issues)
 - Join our [Telegram community](https://t.me/sharpapi_community)
 
 ---
