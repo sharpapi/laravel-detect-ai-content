@@ -80,7 +80,7 @@ Here is an example of how to use `DetectAiContentService` within a Laravel contr
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Exception\GuzzleException;
-use SharpAPI\ContentDetectAi\DetectAiContentService;
+use SharpAPI\DetectAiContent\DetectAiContentService;
 
 class ContentController extends Controller
 {
@@ -166,6 +166,18 @@ SHARP_API_BASE_URL=https://sharpapi.com/api/v1
   }
 }
 ```
+
+## AI agents (Laravel Boost)
+
+This package ships a [Laravel Boost](https://github.com/laravel/boost) skill, `sharpapi-detect-ai-content`. It teaches AI coding agents the async submit-then-`fetchResults()` flow, the queued-job recipe, the result shape and the testing approach. Boost 2 or newer is required. In your app:
+
+```bash
+composer require laravel/boost --dev
+php artisan boost:install          # first time
+php artisan boost:update --discover # already using Boost
+```
+
+Select `sharpapi/laravel-detect-ai-content` when Boost lists the packages it found. The skill loads on demand; no always-on guideline is added.
 
 ---
 
