@@ -37,6 +37,11 @@ class DetectAiContentService extends SharpApiClient
                 'sharpapi-detect-ai-content.api_job_status_polling_wait',
                 180)
         );
+        $this->setUseCustomInterval(
+            (bool) config(
+                'sharpapi-detect-ai-content.api_job_status_use_polling_interval',
+                false)
+        );
         $this->setUserAgent('SharpAPILaravelDetectAiContent/1.0.0');
     }
 
